@@ -1,0 +1,39 @@
+name: Deploy to Cloudflare Workers
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm ci
+
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          command: deploy
+        env:
+          D1_DATABASE_ID: ${{ secrets.D1_DATABASE_ID }}
+          WORKER_NAME: ${{ secrets.WORKER_NAME }}
+          DOMAIN: ${{ secrets.DOMAIN }}
+          CALLSIGN: ${{ secrets.CALLSIGN }}
+          BLOG_URL: ${{ secrets.BLOG_URL }}
+          QRZ_URL: ${{ secrets.QRZ_URL }}
+          MY_GRIDS: ${{ secrets.MY_GRIDS }}
+          GITHUB_REPO: ${{ secrets.GITHUB_REPO }}
+          GITHUB_CLIENT_ID: ${{ secrets.GITHUB_CLIENT_ID }}
+          GITHUB_CLIENT_SECRET: ${{ secrets.GITHUB_CLIENT_SECRET }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ALLOWED_USER: ${{ secrets.ALLOWED_USER }}
+          SESSION_SECRET: ${{ secrets.SESSION_SECRET }}
