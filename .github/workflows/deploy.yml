@@ -24,8 +24,8 @@ jobs:
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           command: deploy
         env:
-          D1_DATABASE_ID: ${{ secrets.D1_DATABASE_ID }}
           WORKER_NAME: ${{ secrets.WORKER_NAME }}
+          D1_DATABASE_ID: ${{ secrets.D1_DATABASE_ID }}
           DOMAIN: ${{ secrets.DOMAIN }}
           CALLSIGN: ${{ secrets.CALLSIGN }}
           BLOG_URL: ${{ secrets.BLOG_URL }}
