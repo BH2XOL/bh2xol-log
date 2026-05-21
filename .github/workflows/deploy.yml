@@ -31,9 +31,6 @@ jobs:
           BLOG_URL: ${{ secrets.BLOG_URL }}
           QRZ_URL: ${{ secrets.QRZ_URL }}
           MY_GRIDS: ${{ secrets.MY_GRIDS }}
-          GITHUB_REPO: ${{ secrets.GITHUB_REPO }}
-          GITHUB_CLIENT_ID: ${{ secrets.GITHUB_CLIENT_ID }}
-          GITHUB_CLIENT_SECRET: ${{ secrets.GITHUB_CLIENT_SECRET }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ALLOWED_USER: ${{ secrets.ALLOWED_USER }}
+          ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL }}
+          ADMIN_PASSWORD_HASH: ${{ secrets.ADMIN_PASSWORD_HASH }}
           SESSION_SECRET: ${{ secrets.SESSION_SECRET }}
