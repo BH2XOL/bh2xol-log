@@ -1,0 +1,17 @@
+name = "${WORKER_NAME}"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+[[d1_databases]]
+binding = "DB"
+database_id = "${D1_DATABASE_ID}"
+
+[vars]
+DOMAIN = "${DOMAIN}"
+CALLSIGN = "${CALLSIGN}"
+BLOG_URL = "${BLOG_URL}"
+QRZ_URL = "${QRZ_URL}"
+MY_GRIDS = "${MY_GRIDS}"
+GITHUB_REPO = "${GITHUB_REPO}"
+GITHUB_CLIENT_ID = "${GITHUB_CLIENT_ID}"
+ALLOWED_USER = "${ALLOWED_USER}"
