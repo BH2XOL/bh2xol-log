@@ -22,15 +22,15 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          preCommands: |
+            sed -i "s|\${WORKER_NAME}|${{ secrets.WORKER_NAME }}|g" wrangler.toml
+            sed -i "s|\${D1_DATABASE_ID}|${{ secrets.D1_DATABASE_ID }}|g" wrangler.toml
+            sed -i "s|\${DOMAIN}|${{ secrets.DOMAIN }}|g" wrangler.toml
+            sed -i "s|\${CALLSIGN}|${{ secrets.CALLSIGN }}|g" wrangler.toml
+            sed -i "s|\${BLOG_URL}|${{ secrets.BLOG_URL }}|g" wrangler.toml
+            sed -i "s|\${QRZ_URL}|${{ secrets.QRZ_URL }}|g" wrangler.toml
+            sed -i "s|\${MY_GRIDS}|${{ secrets.MY_GRIDS }}|g" wrangler.toml
+            sed -i "s|\${ADMIN_EMAIL}|${{ secrets.ADMIN_EMAIL }}|g" wrangler.toml
+            sed -i "s|\${ADMIN_PASSWORD_HASH}|${{ secrets.ADMIN_PASSWORD_HASH }}|g" wrangler.toml
+            sed -i "s|\${SESSION_SECRET}|${{ secrets.SESSION_SECRET }}|g" wrangler.toml
           command: deploy
-        env:
-          WORKER_NAME: ${{ secrets.WORKER_NAME }}
-          D1_DATABASE_ID: ${{ secrets.D1_DATABASE_ID }}
-          DOMAIN: ${{ secrets.DOMAIN }}
-          CALLSIGN: ${{ secrets.CALLSIGN }}
-          BLOG_URL: ${{ secrets.BLOG_URL }}
-          QRZ_URL: ${{ secrets.QRZ_URL }}
-          MY_GRIDS: ${{ secrets.MY_GRIDS }}
-          ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL }}
-          ADMIN_PASSWORD_HASH: ${{ secrets.ADMIN_PASSWORD_HASH }}
-          SESSION_SECRET: ${{ secrets.SESSION_SECRET }}
