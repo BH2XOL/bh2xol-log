@@ -236,16 +236,15 @@ function renderAdmin(callsign: string): string {
       margin-bottom:1rem; padding-bottom:0.6rem; border-bottom:1px solid var(--divider);
     }
     .form-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:0.75rem; }
-    .form-field { display:flex; flex-direction:column; gap:0.2rem; }
+    .form-field { display:flex; flex-direction:column; gap:0.2rem; min-width:0; }
     .form-field label { font-size:0.72rem; color:var(--muted); font-weight:500; letter-spacing:0.04em; }
     .form-field input, .form-field select {
-      height:2.35rem; padding:0 0.65rem; font-size:0.82rem;
+      height:2.35rem; padding:0 0.65rem; font-size:0.82rem; width:100%;
       background:var(--input-bg); border:1px solid var(--input-border); border-radius:8px;
       color:var(--text); font-family:inherit;
       transition: border-color 0.25s, box-shadow 0.25s; outline:none;
     }
-    .form-field input:focus, .form-field select:focus {
-      border-color:var(--accent-border); box-shadow:0 0 0 2px var(--accent-soft);
+);
     }
     .btn { height:2.35rem; padding:0 1.1rem; font-size:0.82rem; font-weight:500; border:none; border-radius:8px; cursor:pointer; font-family:inherit; transition: background-color 0.25s, opacity 0.2s; display:inline-flex; align-items:center; gap:0.4rem; }
     .btn-primary { background:var(--accent); color:#fff; }
@@ -454,5 +453,7 @@ function renderAdmin(callsign: string): string {
 }
 
 function esc(s: string): string {
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}ing {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }
