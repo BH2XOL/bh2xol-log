@@ -244,8 +244,6 @@ function renderAdmin(callsign: string): string {
       color:var(--text); font-family:inherit;
       transition: border-color 0.25s, box-shadow 0.25s; outline:none;
     }
-);
-    }
     .btn { height:2.35rem; padding:0 1.1rem; font-size:0.82rem; font-weight:500; border:none; border-radius:8px; cursor:pointer; font-family:inherit; transition: background-color 0.25s, opacity 0.2s; display:inline-flex; align-items:center; gap:0.4rem; }
     .btn-primary { background:var(--accent); color:#fff; }
     .btn-primary:hover { opacity:0.88; }
