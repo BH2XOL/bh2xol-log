@@ -47,17 +47,21 @@ src/
 
 ## 环境变量
 
-通过 `wrangler secret put` 加密上传，在 Cloudflare Dashboard 中值被隐藏：
+在 GitHub 仓库 Settings → Secrets and variables → Actions 中添加以下 12 个 Secrets：
 
-| 变量 | 说明 |
+| Secret | 说明 |
 | --- | --- |
+| CF_API_TOKEN | Cloudflare API 令牌 |
+| CF_ACCOUNT_ID | Cloudflare 账户 ID |
+| WORKER_NAME | Worker 名称 |
+| D1_DATABASE_ID | D1 数据库 ID |
 | DOMAIN | 部署域名 |
 | CALLSIGN | 你的呼号 |
 | BLOG_URL | 博客链接 |
 | QRZ_URL | QRZ 个人主页 |
 | MY_GRIDS | 你的 Maidenhead Grid，逗号分隔 |
 | ADMIN_EMAIL | 管理员登录邮箱 |
-| ADMIN_PASSWORD_HASH | 密码的 SHA-256 十六进制 |
+| ADMIN_PASSWORD_HASH | 管理员密码的 SHA-256 十六进制 |
 | SESSION_SECRET | Session 签名密钥 |
 
 ## 本地开发
