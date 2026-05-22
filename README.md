@@ -1,4 +1,8 @@
-# bh2xol-log
+<p style="color:red;font-weight:bold;font-size:0.95rem;line-height:1.6;padding:0.75rem 1rem;border:1px solid rgba(255,0,0,0.3);border-radius:8px;background:rgba(255,0,0,0.05);">
+⚠️ 免责声明：本项目部分代码由 AI 辅助生成，仅供学习和参考使用。使用者应自行审查代码安全性，作者不对因使用本项目造成的任何直接或间接损失承担责任。
+</p >
+
+# ham-weblog
 
 业余无线电通联日志（QSO Logbook），部署在 Cloudflare Workers + D1。
 
@@ -34,7 +38,9 @@ src/
 │   ├── db.ts              # D1 数据库操作
 │   ├── adif.ts            # ADIF 解析与去重
 │   ├── grid.ts            # Maidenhead 网格距离计算
-│   └── github.ts #end.ts         # 公开日志页面
+│   └── github.ts          # Session 认证
+└── routes/
+    ├── frontend.ts         # 公开日志页面
     ├── admin.ts            # 管理后台（登录 + 管理面板）
     └── api.ts              # REST API
 ```
@@ -57,8 +63,8 @@ src/
 ## 本地开发
 
 ```bash
-git clone https://github.com/BH2XOL/bh2xol-log
-cd bh2xol-log
+git clone https://github.com/BH2XOL/ham-weblog
+cd ham-weblog
 npm install
 wrangler dev
 ```
