@@ -102,6 +102,7 @@ function renderPage(
       <nav class="nav">
         <a href="${esc(blogURL)}">博客</a >
         <a href="#" class="active">日志</a >
+        <a href="/admin">管理</a >
         <a href="${esc(qrzURL)}">QRZ</a >
         <button class="theme-btn" id="theme-btn" aria-label="切换主题">
           <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
