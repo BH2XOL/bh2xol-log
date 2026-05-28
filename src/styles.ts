@@ -182,8 +182,12 @@ tr:hover td { background: var(--btn-bg); }
 
 .mode-badge { font-size: 0.72rem; font-weight: 500; padding: 0.12rem 0.45rem; border-radius: 4px; }
 .mode-ft8 { background: rgba(191,97,106,0.15); color: #bf616a; }
+.mode-ft4 { background: rgba(245,158,11,0.15); color: #d97706; }
 .mode-ssb { background: var(--accent-soft); color: var(--accent); }
+.mode-cw  { background: rgba(163,113,247,0.15); color: #a371f7; }
 html[data-theme="dark"] .mode-ft8 { background: rgba(191,97,106,0.2); }
+html[data-theme="dark"] .mode-ft4 { background: rgba(245,158,11,0.2); }
+html[data-theme="dark"] .mode-cw  { background: rgba(163,113,247,0.2); }
 
 .lotw-yes { color: #2da44e; font-weight: 700; }
 .lotw-no  { color: var(--muted); opacity: 0.4; }
